@@ -3,12 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Reward Offer</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#f5f5f7">
+  <title>DiscountsNow — Verified Offer</title>
 
   <style>
     * {
@@ -17,277 +13,207 @@
       padding: 0;
     }
 
-    :root {
-      --text: #111111;
-      --muted: #737373;
-      --light: #f6f6f6;
-      --border: #e8e8e8;
-      --accent: #ff2d55;
-      --accent-dark: #e51d45;
-      --green: #20b26b;
-    }
-
     body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                   "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
       min-height: 100vh;
-      background: #f7f7f7;
-      color: var(--text);
-      font-family: "Inter", sans-serif;
-      display: flex;
-      justify-content: center;
-      padding: 18px 16px 35px;
+      -webkit-font-smoothing: antialiased;
     }
 
     .page {
-      width: 100%;
-      max-width: 470px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px 40px;
     }
 
-    /* TOP */
-
-    .top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 18px;
-      padding: 0 3px;
+    .container {
+      width: 100%;
+      max-width: 520px;
+      text-align: center;
     }
 
     .brand {
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-
-    .online {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: #707070;
-      font-size: 11px;
+      font-size: 20px;
       font-weight: 600;
+      letter-spacing: -0.4px;
+      margin: 8px 0 48px;
     }
 
-    .online-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 3px rgba(32,178,107,.10);
-    }
-
-    /* MAIN */
-
-    .main-card {
-      background: #fff;
-      border: 1px solid #ededed;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 12px 45px rgba(0,0,0,.07);
-    }
-
-    .hero {
-      padding: 42px 28px 34px;
-      text-align: center;
-    }
-
-    .pill {
+    .status {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: #f5f5f5;
-      border: 1px solid #ebebeb;
+      background: #ffffff;
+      border: 1px solid #e5e5e7;
       border-radius: 999px;
       padding: 8px 13px;
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 500;
       color: #555;
-      margin-bottom: 22px;
+      margin-bottom: 26px;
     }
 
-    .pill-icon {
-      font-size: 13px;
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: #34c759;
+      border-radius: 50%;
     }
 
     h1 {
-      font-size: clamp(31px, 8vw, 42px);
+      font-size: clamp(38px, 9vw, 58px);
       line-height: 1.04;
-      letter-spacing: -1.8px;
-      font-weight: 800;
-      margin-bottom: 14px;
+      letter-spacing: -2.4px;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
 
-    .hero-description {
-      max-width: 360px;
-      margin: 0 auto;
-      color: var(--muted);
+    .subtitle {
+      font-size: clamp(17px, 4.5vw, 20px);
+      line-height: 1.45;
+      color: #6e6e73;
+      max-width: 430px;
+      margin: 0 auto 32px;
+    }
+
+    .offer-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 30px 22px;
+      margin: 0 auto 20px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .verified {
       font-size: 14px;
-      line-height: 1.55;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 18px;
     }
 
-    /* REWARD */
+    .offer-title {
+      font-size: clamp(22px, 6vw, 30px);
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
 
     .reward {
-      margin: 4px 20px 0;
-      padding: 26px 20px 24px;
-      background: #fafafa;
-      border: 1px solid #ededed;
-      border-radius: 20px;
-      text-align: center;
+      font-size: clamp(52px, 15vw, 78px);
+      line-height: 1;
+      letter-spacing: -3px;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
     .reward-label {
-      color: #8a8a8a;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 7px;
+      color: #6e6e73;
+      font-size: 15px;
+      margin-bottom: 26px;
     }
 
-    .reward-value {
-      font-size: 52px;
-      line-height: 1;
-      font-weight: 800;
-      letter-spacing: -2.8px;
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 56px;
+      background: #0071e3;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 16px;
+      font-size: 17px;
+      font-weight: 600;
+      transition: background 0.2s ease, transform 0.15s ease;
     }
 
-    .reward-type {
-      color: #777;
-      font-size: 12px;
-      margin-top: 9px;
+    .cta:hover {
+      background: #0077ed;
     }
 
-    /* CONTENT */
-
-    .content {
-      padding: 26px 24px 28px;
-    }
-
-    .section-title {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-      color: #999;
-      margin-bottom: 14px;
+    .cta:active {
+      transform: scale(0.98);
     }
 
     .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 8px 22px;
+      text-align: left;
+      margin-bottom: 20px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
     }
 
     .step {
       display: flex;
+      gap: 16px;
       align-items: center;
-      gap: 13px;
+      padding: 19px 0;
+      border-bottom: 1px solid #eeeeef;
     }
 
-    .step-number {
+    .step:last-child {
+      border-bottom: none;
+    }
+
+    .number {
       width: 32px;
       height: 32px;
-      flex-shrink: 0;
+      flex: 0 0 32px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f1f1f1;
-      border-radius: 10px;
-      font-size: 12px;
-      font-weight: 800;
+      background: #f5f5f7;
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 600;
     }
 
-    .step-text {
-      font-size: 13px;
-      line-height: 1.4;
-      color: #404040;
-    }
-
-    /* CTA */
-
-    .cta {
+    .step-text strong {
       display: block;
-      width: 100%;
-      border: 0;
-      border-radius: 14px;
-      padding: 17px 18px;
-      background: var(--accent);
-      color: white;
-      text-align: center;
-      text-decoration: none;
       font-size: 15px;
-      font-weight: 800;
-      letter-spacing: -.1px;
-      box-shadow: 0 8px 20px rgba(255,45,85,.20);
-      transition:
-        transform .15s ease,
-        background .15s ease,
-        box-shadow .15s ease;
+      font-weight: 600;
+      margin-bottom: 3px;
     }
 
-    .cta:hover {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 11px 25px rgba(255,45,85,.25);
+    .step-text span {
+      font-size: 14px;
+      color: #6e6e73;
+      line-height: 1.35;
     }
-
-    .cta:active {
-      transform: translateY(0);
-    }
-
-    .cta-arrow {
-      margin-left: 5px;
-    }
-
-    .secure {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-      margin-top: 13px;
-      color: #999;
-      font-size: 10px;
-      font-weight: 500;
-    }
-
-    /* FOOTER */
 
     .footer {
-      text-align: center;
-      margin-top: 17px;
-      padding: 0 12px;
-      color: #a0a0a0;
-      font-size: 9px;
-      line-height: 1.6;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #86868b;
+      padding: 4px 20px;
     }
 
-    /* MOBILE */
-
     @media (max-width: 380px) {
-      body {
-        padding: 12px 11px 25px;
+      .page {
+        padding: 18px 12px 30px;
       }
 
-      .hero {
-        padding: 34px 20px 28px;
-      }
-
-      .content {
-        padding: 23px 19px 24px;
-      }
-
-      .reward {
-        margin-left: 15px;
-        margin-right: 15px;
+      .brand {
+        margin-bottom: 38px;
       }
 
       h1 {
-        font-size: 30px;
+        letter-spacing: -1.8px;
       }
 
-      .reward-value {
-        font-size: 46px;
+      .offer-card {
+        border-radius: 24px;
+        padding: 26px 18px;
+      }
+
+      .steps {
+        padding: 6px 18px;
       }
     }
   </style>
@@ -296,107 +222,80 @@
 <body>
 
   <main class="page">
+    <div class="container">
 
-    <header class="top">
       <div class="brand">DiscountsNow</div>
 
-      <div class="online">
-        <span class="online-dot"></span>
-        Online
+      <div class="status">
+        <span class="status-dot"></span>
+        Offer currently available
       </div>
-    </header>
 
-    <section class="main-card">
+      <h1>Get rewarded<br>for your opinion.</h1>
 
-      <div class="hero">
+      <p class="subtitle">
+        Complete a short survey and check if you qualify for the available reward.
+      </p>
 
-        <div class="pill">
-          <span class="pill-icon">🎁</span>
-          Reward offer
+      <section class="offer-card">
+
+        <div class="verified">✔ Verified Offer</div>
+
+        <div class="offer-title">
+          Get a $750 Apple Gift Card Today
         </div>
 
-        <h1>
-          Get rewarded<br>
-          for your opinion.
-        </h1>
-
-        <p class="hero-description">
-          Complete a short survey and check your eligibility
-          for the reward shown below.
-        </p>
-
-      </div>
-
-      <div class="reward">
+        <div class="reward">$750</div>
 
         <div class="reward-label">
-          Available reward
-        </div>
-
-        <div class="reward-value">
-          $750
-        </div>
-
-        <div class="reward-type">
-          Gift card reward
-        </div>
-
-      </div>
-
-      <div class="content">
-
-        <div class="section-title">
-          How it works
-        </div>
-
-        <div class="steps">
-
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-text">
-              Start the offer by clicking the button below.
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-text">
-              Complete the short survey and any required steps.
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-text">
-              Follow the instructions provided to receive your reward.
-            </div>
-          </div>
-
+          Potential reward for eligible participants
         </div>
 
         <a
           class="cta"
           href="https://giftclick.org/aff_c?offer_id=4676&aff_id=154633"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Check My Eligibility
-          <span class="cta-arrow">→</span>
         </a>
 
-        <div class="secure">
-          🔒 Secure connection
-          <span>•</span>
-          🔐 Your information is protected
+      </section>
+
+      <section class="steps">
+
+        <div class="step">
+          <div class="number">1</div>
+          <div class="step-text">
+            <strong>Answer a few questions</strong>
+            <span>Complete the short survey.</span>
+          </div>
         </div>
 
-      </div>
+        <div class="step">
+          <div class="number">2</div>
+          <div class="step-text">
+            <strong>Check your eligibility</strong>
+            <span>See whether the offer is available to you.</span>
+          </div>
+        </div>
 
-    </section>
+        <div class="step">
+          <div class="number">3</div>
+          <div class="step-text">
+            <strong>Complete the offer</strong>
+            <span>Follow the instructions provided.</span>
+          </div>
+        </div>
 
-    <footer class="footer">
-      Promotional offer. Eligibility and reward availability may vary.
-      Survey participation and additional requirements may apply.
-    </footer>
+      </section>
 
+      <p class="footer">
+        Offers and rewards are subject to eligibility and availability.
+        Terms may apply.
+      </p>
+
+    </div>
   </main>
 
 </body>
